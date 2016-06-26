@@ -31,6 +31,10 @@ void UDoorOpen::TickComponent( float DeltaTime, ELevelTick TickType, FActorCompo
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
-	// ...
+	AActor* owner = GetOwner();
+	FRotator r = owner->GetActorRotation();
+	r = r.Add( 0.0, 0.1, 0.0 );
+	owner->SetActorRotation(r);
+
 }
 
